@@ -6,8 +6,12 @@
     <title>Employee Registration Form</title>
     <script>
         function checkDateElement(elm){
-            const date = new Date;
-            if(elm.value < date){
+            const date = new Date();
+            let currentDay = String(date.getDate()).padStart(2,'0');
+            let currentMonth = String(date.getMonth()+1).padStart(2,'0');
+            let currentYear = date.getFullYear();
+            let currentDate = `${currentYear}-${currentMonth}-${currentDay}`
+            if(elm.value < currentDate){
                 elm.setCustomValidity("please select valid date")
             }
         }
@@ -28,8 +32,8 @@
             </tr>
             <tr>
                 <td>Email</td>
-                <td><input type="email" id="firstname" required></td>
-            </tr>
+                <td><input type="email" id="firstname"  pattern=".+@gmail\.com" required></td>
+            </tr> 
             <tr>
                 <td><label for="cars" required>Gender</label></td>
                 <td>
@@ -64,7 +68,7 @@
             </tr>
             <tr>
                 <td>Tentative Date to Join</td>
-                <td><input type="date" id = "date" required></td>
+                <td><input oninput="checkDateElement(this)" type="date" id = "date" required></td>
             </tr>
             <tr>
                 <td></td>
