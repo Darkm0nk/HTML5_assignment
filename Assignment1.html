@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration Form</title>
+    <script>
+        function checkDateElement(elm){
+            const date = new Date;
+            if(elm.value < date){
+                elm.setCustomValidity("please select valid date")
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Employee Registration Form</legend>
+    <form>
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" id="firstname" required></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" id="lastname" required></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="firstname" required></td>
+            </tr>
+            <tr>
+                <td><label for="cars" required>Gender</label></td>
+                <td>
+                    <select name="cars" id="cars">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="cities" required>City</label></td>
+                <td>
+                    <select name="cities" id="cities">
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Bangluru">Bangluru</option>
+                        <option value="Pune">Pune</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Resume</td>
+                <td><input type="file" accept=".doc,.docx,.pdf" id="resume" required></td>
+            </tr>
+            <tr>
+                <td>Position</td>
+                <td><input list="positions" name="position" id="position" required></td>
+                <datalist id="positions">
+                    <option value="Jr. Software Developer">
+                    <option value="Java Developer">
+                    <option value="Front-end Trainee">
+                  </datalist>
+            </tr>
+            <tr>
+                <td>Tentative Date to Join</td>
+                <td><input type="date" id = "date" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" id = "submit" ></td>
+            </tr>
+        </table>
+    </form>
+</fieldset>
+</body>
+</html>
